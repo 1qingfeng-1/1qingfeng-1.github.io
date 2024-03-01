@@ -1,0 +1,23 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "vitepress vue",
+  "main": "index.js",
+  "repository": "https://github.com/1qingfeng-1/blogs.git",
+  "author": "mrpeng <pengxj@qysea.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "dayjs": "^1.11.10",
+    "gray-matter": "^4.0.3",
+    "stylus": "^0.62.0",
+    "vitepress": "^1.0.0-rc.44"
+  },
+  "dependencies": {
+    "vitepress-plugin-pagefind": "^0.2.12"
+  }
+}
