@@ -7,7 +7,6 @@ export default {
     title: '清风', // 博客的标题
     description: '清风的个人博客', // 博客的介绍
     outDir: "./dist",
-    base: "blogs",
     lastUpdated: true,
     markdown: {
         lineNumbers: true,
