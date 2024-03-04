@@ -1,12 +1,9 @@
 import { getSidebar, getBanners, COLS } from './dev'
 
 
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+
 
 export default {
-    vite:{
-        plugins:[pagefindPlugin()],
-    },
     title: '清风', // 博客的标题
     description: '清风的个人博客', // 博客的介绍
     outDir: "./dist",
