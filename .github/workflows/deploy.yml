@@ -45,7 +45,6 @@ jobs:
       - name: Build With VitePress
         run: |
           yarn docs:build
-          touch docs/.vitepress/dist/.nojekyll
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
