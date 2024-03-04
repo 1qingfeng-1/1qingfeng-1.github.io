@@ -1,5 +1,5 @@
 import { getSidebar, getBanners, COLS } from './dev'
-
+import mdItCustomAttrs from "markdown-it-custom-attrs";
 
 
 
@@ -14,11 +14,45 @@ export default {
         image: {
             // 开启图片懒加载
             lazyLoading: true
-        }
+        },
+        // 图片放大
+        config: (md) => {
+            // use more markdown-it plugins!
+            md.use(mdItCustomAttrs, "image", {
+              "data-fancybox": "gallery",
+            });
+        },
     },
 
     head:[
-        ['link', { rel: 'icon', href: '/favicon.ico' }]
+        [
+            'link', 
+            { rel: 'icon', href: '/favicon.ico' }, 
+            { rel: "stylesheet",href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" } 
+        ],
+        
+        [
+            "script",
+            {
+                src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
+            },
+        ],
+        
+        [
+            "script",
+            {},
+            `
+              const script = document.createElement("script");
+              script.defer = "";
+              script.sync = "";
+              script.src = "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js";
+              document.body.append(script);
+              const link = document.createElement("link");
+              link.rel = "stylesheet";
+              link.href = "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css";
+              document.head.append(link);
+            `
+          ], 
     ],
     themeConfig: {
         logo: "images/logo.png",   // 页面上显示logo
