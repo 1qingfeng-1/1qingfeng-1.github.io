@@ -30,5 +30,17 @@ export default {
             provider: 'local',
         },
         banner: getBanners(),
+        outline: { 
+            level: [2,4], // 显示2-4级标题
+            // level: 'deep', // 显示2-6级标题
+            label: '当前页大纲' // 文字显示
+        },
+        //markdown配置
+        markdown: {
+            image: {
+            // 开启图片懒加载
+            lazyLoading: true
+            },
+        },
     },
 }
