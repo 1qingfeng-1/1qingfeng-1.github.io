@@ -54,6 +54,6 @@ tags: Android|反编译
       java -jar C:\Users\13736\AppData\Local\Android\Sdk\build-tools\30.0.3\lib\apksigner.jar sign  -v  --out douyin_zip_signer.apk --ks C:\Users\13736\myapp.jks --ks-key-alias key0  douyin_zip.apk
       ```
 
-​		[签名参考链接](https://liapp.lockincomp.com/blog/blog-Post/tech-apk-signature-scheme-v2-with-apksigner/))
+​		[签名参考链接](https://liapp.lockincomp.com/blog/blog-Post/tech-apk-signature-scheme-v2-with-apksigner/)
 
 
