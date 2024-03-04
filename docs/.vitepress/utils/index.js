@@ -27,20 +27,26 @@ export const notify = (body) => {
 // 基于theme.sidebar生成扁平列表
 export const getFlatList = (sidebar) => {
     const list = [];
+  
+    const processItem = (item, parentLink, parentText) => {
+      if (item.children) {
+        item.children.forEach(child => processItem(child, item.link, item.text));
+      } else {
+        list.push({
+          ...item,
+          parentLink: parentLink,
+          parentText: parentText,
+          tags: item.tags && item.tags.split('|'),
+        });
+      }
+    };
+  
     Object.keys(sidebar).forEach((dir) => {
-        const onlyChild = sidebar[dir][0]; // ASSERT 有且仅有一个子栏目
-        onlyChild.items.forEach((item) =>{
-            list.push({
-                ...item,
-                parentLink: dir,
-                parentText: onlyChild.text,
-                tags: item.tags && item.tags.split('|'),
-            })
-        }
-        );
+      sidebar[dir].forEach(item => processItem(item, dir, item.text));
     });
+  
     return list;
-};
+  };
 
 // LocalStorage
 export const getLS = (key, defaultData = '{}') => {
