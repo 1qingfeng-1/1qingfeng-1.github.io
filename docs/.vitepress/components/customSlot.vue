@@ -6,6 +6,7 @@
         </template>
 
         <template #doc-before>
+            <Music />
             <div class="doc-before-wrapper">
                 <Tags />
                 <LastUpdated />
@@ -26,6 +27,7 @@ import LastUpdated from './lastUpdated.vue';
 import Tags from './tags.vue';
 import TopNotice from './topNotice.vue';
 import Canvas from './canvas.vue';
+import Music from './music.vue'
 
 
 const { Layout } = DefaultTheme;
